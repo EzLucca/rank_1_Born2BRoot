@@ -42,6 +42,9 @@ between machines or platforms easily. When an application requires more
 processing power, the hypervisor provides seamless access to additional physical
 resources.
 
+[https://42-cursus.gitbook.io/guide/1-rank-01/born2beroot](born2beroot-guide)
+[https://github.com/chlimous/42-born2beroot_guide](Another-guide)
+
 ## Types of Hipervisors
 
 - Type 1:
@@ -85,7 +88,28 @@ friendly. Type 2 hypervisors are easier to install, configure, and use than
 bare-metal hypervisors. It is similar to installing and using other desktop 
 applications.
 
-[https://42-cursus.gitbook.io/guide/1-rank-01/born2beroot](born2beroot-guide)
 
-pass = 'This;will;Pass42'
+pass = 'This;shall;Pass42'
 userpass = 'The;secret;pass42'
+encrypt pass= 'It;is;a;Secret42'
+
+- What is the difference between hypervisors and containers?
+A container is a software package that stores all the necessary files and 
+configurations to run an application on any operating system. Developers use 
+containers to reduce software development complexities and improve efficiency 
+when deploying the applications. A containerized application can run on a 
+public, hybrid, or on-premises cloud with consistent performance because it is 
+independent of the underlying operating system. 
+
+Both hypervisors and containers provide virtualization but at a different 
+software layer. A hypervisor abstracts the hardware from the software 
+environment. In contrast, a container runs in an environment where a container 
+engine abstracts the operating system.
+
+- What are the security considerations for hypervisors?
+Software programs on a virtual machine do not interfere with applications on 
+other guest operating systems, which provides a degree of security. However, 
+the virtualized environment relies on the hypervisor for a robust security 
+posture. Any issues affecting the hypervisor will impact all virtual machines 
+running on top of it. So, it’s essential to use a hypervisor with built-in 
+safeguard measures to secure the workload’s integrity.
