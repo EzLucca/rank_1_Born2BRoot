@@ -17,26 +17,26 @@ on limited hardware infrastructure.
 
 The use of hypervisor offers some benefits:
 
-- Hard independence
+1. Hard independence
 A hypervisor abstracts the host's hardware from the operating software 
 environment. IT administrators can configure, deploy, and manage software 
 applications without being constrained to a specific hardware setup. 
 For example, you can run macOS on a virtual machine instead of iMac computers. 
 
-- Efficiency
+2. Efficiency
 Hypervisors make setting up a server operating system more efficient. 
 Manually installing the operating system and related software components is a 
 time-consuming process. Instead, you can configure the hypervisor to 
 immediately create your virtual environment.
 
-- Scalability
+3. Scalability
 Organizations use hypervisors to maximize resource usage on physical 
 computers. Instead of using separate machines for different workloads, 
 hypervisors create multiple virtual computers to run several workloads on a 
 single machine. This translates to faster scalability and reduced hardware 
 expenditure for organizations.
 
-- Portability
+4. Portability
 IT teams can allocate memory, networking, processing, and storage resources 
 across multiple servers as needed. They have the ability to shift workloads 
 between machines or platforms easily. When an application requires more 
@@ -90,9 +90,9 @@ bare-metal hypervisors. It is similar to installing and using other desktop
 applications.
 
 
-pass = `This;shall;Pass42`
-userpass = `The;secret;Pass42`
-encrypt pass= `It;is;a;Secret42`
+### rootpass = `This;shall;Pass42`
+### userpass = `The;secret;Pass42`
+### encrypt pass= `It;is;a;Secret42`
 
 - What is the difference between hypervisors and containers?
 A container is a software package that stores all the necessary files and 
@@ -126,7 +126,7 @@ limiting the risk of propagation in the case of malware intrusion.
 
 ## Difference between aptitude and apt
 
-aptitude is an enhanced version of apt.
+Aptitude is an enhanced version of apt.
 APT is a lower-level package manager and aptitude is a high-level package manager.
 `APTITUDE` offers better functionality compared to `apt`.
 apt is command-line only and focuse on being simple and consistent interface.
@@ -150,6 +150,7 @@ SElinux is considered difficult to administrator set up and maintain.
 - Check if it is not GUI: `ls /usr/bin/*session`
 - Check ssh status: `sudo service ssh status`
 - Check ssh restart: `sudo service ssh restart`
+- Connect via ssh: `<user>@localhost -p 4241`
 - Check ufw status: `sudo service ufw status`
 - Check APPArmor is active:  `sudo systemctl status apparmor`
 
@@ -161,19 +162,22 @@ SElinux is considered difficult to administrator set up and maintain.
 - Delete group: `sudo groupdel <group_name>`
 - Check the group: `getent group <group_name>`
 - Add user to group: `sudo adduser <user> <group_name>`
+- Rules of user: `sudo chage -l <username>`
 
-### 
-- Connect via ssh: `<user>@localhost -p 4241`
+### Rules
 - Enable ufw: `sudo ufw enable`
+- Check ufw rules: `sudo ufw status numbered`
 - Allow ufw rules port: `sudo ufw allow 4242`
 - Delete ufw rules port: `sudo ufw delete <numbe>`
-- Check ufw rules: `sudo ufw status numbered`
+
+### Other stuffs
+- Show partitions: `lsblk`
 - Configure crontab: `sudo crontab -u root -e`
 - Sha signature: `shasum machinename.vdi`
 - Check packages in debian: `dpkg -s <name_package>`
 - Check the encryption:  `sudo cryptsetup luksDump <sda_something>`
 
-## Address
+## Files paths
 
 - ssh: `vim /etc/ssh/ssh_config`
 - ssh: `vim /etc/ssh/sshd_config`
