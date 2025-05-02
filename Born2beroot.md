@@ -4,7 +4,7 @@ zation and server administration works.
 
 # Virtual machine creation
 
-[https://aws.amazon.com/what-is/hypervisor/](link)
+[Hypervisor](https://aws.amazon.com/what-is/hypervisor/)
 To set up a virtual machine the first tthing you need is a hypervisor. 
 Hypervisor is a software that you can use to run multiple virtual machine .
 Every virtual machine has its own operating system and applications. The role
@@ -43,7 +43,7 @@ between machines or platforms easily. When an application requires more
 processing power, the hypervisor provides seamless access to additional physical
 resources.
 
-[https://42-cursus.gitbook.io/guide/1-rank-01/born2beroot](born2beroot-guide)
+[Guide](https://42-cursus.gitbook.io/guide/1-rank-01/born2beroot)
 [Other guide](https://github.com/chlimous/42-born2beroot_guide)
 
 ## Types of Hipervisors
@@ -189,55 +189,55 @@ connection protocol multiplexes the encrypted tunnel into multiple logical
 communication channels.
 
 ## Sudo Rules:
-- passwd_tries=3: 
+- `passwd_tries=3`: 
 Allows a total of 3 tries entering the sudo password.
 
-- badpass_message="message":
+- `badpass_message="message"`:
 Message shown when the password failed.
 
-- logfile="/var/log/sudo/sudo_config:
+- `logfile="/var/log/sudo/sudo_config`:
 The path where will the sudo logs will be stored.
 
-- log_input, log_output:
+- `log_input, log_output`:
 What will be logged.
 
-- iolog_dir="/var/log/sudo"
+- `iolog_dir="/var/log/sudo"`
 What will be logged.
 
-- requiretty:
+- `requiretty`:
 TTY (TeleTYpewriter) become required.
 the command prints the name of the terminal connected to standar input.
 
-- secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+- `secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"`:
 These are the path that are excluded of sudo.
 
 ## Password policy
 
 - Installing: `sudo apt install libpam-pwquality`
-- minlen=10:
+- `minlen=10`:
 Minimum characters of the password.
 
-- ucredit=-1:
+- `ucredit=-1`:
 The password must have at least 1 capital letter. The minus means it is the 
 Minimum if it was + it means maximum of characters.
 
-- dcredit=-1:
+- `dcredit=-1`:
 The passworld at least have to contain a digit.
 
-- lcredit=-1:
+- `lcredit=-1`:
 The password at least have to contain a lowercase letter.
 
-- maxrepeat=3:
+- `maxrepeat=3`:
 The password can not have the same characters repited 3 continously times.
 
-- reject_username:
+- `reject_username`:
 The password can not contain the username inside itself.
 
-- difok=7:
+- `difok=7`:
 The password it have to contain at least seven different characters from the 
 last password used.
 
-- enforce_for_root:
+- `enforce_for_root`:
 This policy is implemented to the root user too.
 
 ## Script
@@ -320,6 +320,7 @@ the command `wc -l` will count the words by line.
 
 ## Crontab
 cron - daemon to execute scheduled commands (Vixie Cron)
+it will search for crontab files and check if there is some command to be used.
 
 ## Signature
 
