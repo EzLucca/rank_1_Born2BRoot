@@ -145,6 +145,15 @@ SElinux is considered difficult to administrator set up and maintain.
 
 ## Commands
 
+### Check services
+
+- Check if it is not GUI: `ls /usr/bin/*session`
+- Check ssh status: `sudo service ssh status`
+- Check ssh restart: `sudo service ssh restart`
+- Check ufw status: `sudo service ufw status`
+- Check APPArmor is active:  `sudo systemctl status apparmor`
+
+### Creating and manage users/groups
 - Creating user: `sudo adduser <username>`
 - Delete user: `sudo userdel <username>`
 - Delete user from groups: `sudo delgroup <username>`
@@ -152,11 +161,10 @@ SElinux is considered difficult to administrator set up and maintain.
 - Delete group: `sudo groupdel <group_name>`
 - Check the group: `getent group <group_name>`
 - Add user to group: `sudo adduser <user> <group_name>`
-- Check ssh status: `sudo service ssh status`
-- Check ssh restart: `sudo service ssh restart`
+
+### 
 - Connect via ssh: `<user>@localhost -p 4241`
 - Enable ufw: `sudo ufw enable`
-- Check ufw status: `sudo service ufw status`
 - Allow ufw rules port: `sudo ufw allow 4242`
 - Delete ufw rules port: `sudo ufw delete <numbe>`
 - Check ufw rules: `sudo ufw status numbered`
@@ -164,8 +172,6 @@ SElinux is considered difficult to administrator set up and maintain.
 - Sha signature: `shasum machinename.vdi`
 - Check packages in debian: `dpkg -s <name_package>`
 - Check the encryption:  `sudo cryptsetup luksDump <sda_something>`
-- Check APPArmor is active:  `sudo systemctl status apparmor`
-- Check if it is not GUI: `ls /usr/bin/*session`
 
 ## Address
 
