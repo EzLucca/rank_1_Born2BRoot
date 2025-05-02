@@ -44,7 +44,7 @@ processing power, the hypervisor provides seamless access to additional physical
 resources.
 
 [https://42-cursus.gitbook.io/guide/1-rank-01/born2beroot](born2beroot-guide)
-[https://github.com/chlimous/42-born2beroot_guide](Another-guide)
+[Other guide](https://github.com/chlimous/42-born2beroot_guide)
 
 ## Types of Hipervisors
 
@@ -91,7 +91,7 @@ applications.
 
 
 pass = `This;shall;Pass42`
-userpass = `The;secret;pass42`
+userpass = `The;secret;Pass42`
 encrypt pass= `It;is;a;Secret42`
 
 - What is the difference between hypervisors and containers?
@@ -115,10 +115,41 @@ posture. Any issues affecting the hypervisor will impact all virtual machines
 running on top of it. So, it’s essential to use a hypervisor with built-in 
 safeguard measures to secure the workload’s integrity.
 
+## The benefits of virtual machines
+
+- It allow to test operating systems and creating the environment to security tests.
+- Vms simlifies data backyp thanks to a snapshot of the vm and its data, which
+allows to restore the vm to its previous state;
+- Increases the security of data by partitioning them and isolating the services
+on different serves (each VM is isolated from the others, including the host system),
+limiting the risk of propagation in the case of malware intrusion.
+
+## Difference between aptitude and apt
+
+aptitude is an enhanced version of apt.
+APT is a lower-level package manager and aptitude is a high-level package manager.
+`APTITUDE` offers better functionality compared to `apt`.
+apt is command-line only and focuse on being simple and consistent interface.
+Aptitude can be command-line or GUI, has more detailed package management options
+and an interactive mode where you can browse available packages.
+
+## What is APPArmor
+
+It is a linux kernel security mode that allows the system to restrict program's
+capabilities with per-program profiles. Theses profiles can allow capabilities 
+like network access, raw socket access and permission to read, write, or execute
+files on matching paths. The `APPArmor` supplement the traditional discretionary
+access control (DAC) model by providing mandatory access control (MAC).
+
+SElinux is considered difficult to administrator set up and maintain.
+
 ## Commands
 
-- Creating user: `sudo adduser <login>`
+- Creating user: `sudo adduser <username>`
+- Delete user: `sudo userdel <username>`
+- Delete user from groups: `sudo delgroup <username>`
 - Creating group: `sudo addgroup <group_name>`
+- Delete group: `sudo groupdel <group_name>`
 - Check the group: `getent group <group_name>`
 - Add user to group: `sudo adduser <user> <group_name>`
 - Check ssh status: `sudo service ssh status`
@@ -126,19 +157,36 @@ safeguard measures to secure the workload’s integrity.
 - Connect via ssh: `<user>@localhost -p 4241`
 - Enable ufw: `sudo ufw enable`
 - Check ufw status: `sudo service ufw status`
-- Allow ufw port: `sudo ufw allow 4242`
-- Check ufw rules: `sudo ufw status`
+- Allow ufw rules port: `sudo ufw allow 4242`
+- Delete ufw rules port: `sudo ufw delete <numbe>`
+- Check ufw rules: `sudo ufw status numbered`
 - Configure crontab: `sudo crontab -u root -e`
 - Sha signature: `shasum machinename.vdi`
+- Check packages in debian: `dpkg -s <name_package>`
+- Check the encryption:  `sudo cryptsetup luksDump <sda_something>`
+- Check APPArmor is active:  `sudo systemctl status apparmor`
+- Check if it is not GUI: `ls /usr/bin/*session`
 
 ## Address
 
-- ssh: `nano /etc/ssh/ssh_config`
-- ssh: `nano /etc/ssh/sshd_config`
+- ssh: `vim /etc/ssh/ssh_config`
+- ssh: `vim /etc/ssh/sshd_config`
 - sudo: `touch /etc/sudoers.d/sudo_config`
-- sudo: `nano /etc/sudoers.d/sudo_config`
-- Editing password: `nano /etc/login.defs`
-- Editing password: `nano /etc/pam.d/common-password`
+- sudo: `vim /etc/sudoers.d/sudo_config`
+- Editing password: `vim /etc/login.defs`
+- Editing password: `vim /etc/pam.d/common-password`
+- Checking/changing hostname: `vim /etc/hostname`
+- Checking/changing hostname: `vim /etc/hosts`
+
+## ssh
+The ssh stands for secure Shell and it is a protocol designed as a secure
+alternative to operating network services. The services are based on client-server
+architecture connecting the ssh-client with the ssh-server.
+The `ssh` operates as a layered protocol comprising three componets: the
+transport layer provides server authenticaton, confidentiality and integrity;
+the user authentication protocol validates the user to the server; and the 
+connection protocol multiplexes the encrypted tunnel into multiple logical 
+communication channels.
 
 ## Sudo Rules:
 - passwd_tries=3: 
@@ -235,7 +283,7 @@ To check the memory usage of the machine.
 The who command with `who -b` flag will display the time of the last system boot on 
 the screen.
 
-### LVM use:
+### LVM(Logical Volume Manager) use:
 
 `lsblk | grep lvm | wc -l | awk '{if ($1){printf("yes"); exit;} else print "no"}'`
 The `lsblk` command will show the information about all the blocks of memory devices
