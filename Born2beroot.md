@@ -151,9 +151,9 @@ The way of the abstraction the LVM does is:
 - All this mapping is invisible to the OS and its applications.
 
 ## Passwords
-### rootpass = `This;shall;Pass42`
-### userpass = `The;secret;Pass42`
-### encrypt pass= `It;is;a;Secret42`
+- rootpass = `This;shall;Pass42`
+- userpass = `The;secret;Pass42`
+- encrypt pass= `It;is;a;Secret42`
 
 ## Commands
 
