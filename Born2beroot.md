@@ -118,10 +118,10 @@ safeguard measures to secure the workload’s integrity.
 ## The benefits of virtual machines
 
 - It allow to test operating systems and creating the environment to security tests.
-- Vms simlifies data backyp thanks to a snapshot of the vm and its data, which
+- Vms simplifies data backup thanks to a snapshot of the vm and its data, which
 allows to restore the vm to its previous state;
 - Increases the security of data by partitioning them and isolating the services
-on different serves (each VM is isolated from the others, including the host system),
+on different servers (each VM is isolated from the others, including the host system),
 limiting the risk of propagation in the case of malware intrusion.
 
 ## Difference between aptitude and apt
@@ -142,6 +142,19 @@ files on matching paths. The `APPArmor` supplement the traditional discretionary
 access control (DAC) model by providing mandatory access control (MAC).
 
 SElinux is considered difficult to administrator set up and maintain.
+
+## What is a LVM?
+It is a system for managing disk storage that provides a layer of abstraction
+between physical storage devices and the file systems used by the operating system.
+It can combine to physical storages to act as one.
+
+The way of the abstraction the LVM does is:
+- First it combines every physical storage into one big pool;
+- This big pool is called logical volumes and will act like virtual partitions.
+- This block devices are divided into smaller chunks called `extents(4MB)`.
+- The LVM maps which physical extents belong to which logical volume
+- All this mapping is invisible to the OS and its applications.
+
 
 ## Commands
 
