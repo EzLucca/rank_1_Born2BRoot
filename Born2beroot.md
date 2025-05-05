@@ -181,6 +181,8 @@ The way of the abstraction the LVM does is:
 - Check ufw rules: `sudo ufw status numbered`
 - Allow ufw rules port: `sudo ufw allow 4242`
 - Delete ufw rules port: `sudo ufw delete <numbe>`
+- Check Password rules:`chage -l <username>`
+- Change Password rules:`chage -M 30 -m 2 -w 7 <username>`
 
 ### Other stuffs
 - Show partitions: `lsblk`
@@ -199,6 +201,7 @@ The way of the abstraction the LVM does is:
 - Editing password: `vim /etc/pam.d/common-password`
 - Checking/changing hostname: `vim /etc/hostname`
 - Checking/changing hostname: `vim /etc/hosts`
+- Crontab running from start:  in `vim ~/.profile` add `/home/monitoring.sh`
 
 ## ssh
 The ssh stands for secure Shell and it is a protocol designed as a secure
@@ -270,7 +273,7 @@ Print the informaton of the architecture.
 
 ### Physical Cores (CPU):
 
-`grep "physical id" /proc/cpuinfo | wc -l` 
+`grep "physical id" /proc/cpuinfo | uniq | wc -l` 
 The cpu info are shown in the file located in /proc/cpuinfo, like type, brand,
 model, performance, etc
 
