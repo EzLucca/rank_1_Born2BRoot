@@ -89,11 +89,6 @@ friendly. Type 2 hypervisors are easier to install, configure, and use than
 bare-metal hypervisors. It is similar to installing and using other desktop 
 applications.
 
-## Passwords
-### rootpass = `This;shall;Pass42`
-### userpass = `The;secret;Pass42`
-### encrypt pass= `It;is;a;Secret42`
-
 - What is the difference between hypervisors and containers?
 A container is a software package that stores all the necessary files and 
 configurations to run an application on any operating system. Developers use 
@@ -155,6 +150,10 @@ The way of the abstraction the LVM does is:
 - The LVM maps which physical extents belong to which logical volume
 - All this mapping is invisible to the OS and its applications.
 
+## Passwords
+### rootpass = `This;shall;Pass42`
+### userpass = `The;secret;Pass42`
+### encrypt pass= `It;is;a;Secret42`
 
 ## Commands
 
