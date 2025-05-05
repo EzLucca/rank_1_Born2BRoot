@@ -89,7 +89,7 @@ friendly. Type 2 hypervisors are easier to install, configure, and use than
 bare-metal hypervisors. It is similar to installing and using other desktop 
 applications.
 
-
+## Passwords
 ### rootpass = `This;shall;Pass42`
 ### userpass = `The;secret;Pass42`
 ### encrypt pass= `It;is;a;Secret42`
